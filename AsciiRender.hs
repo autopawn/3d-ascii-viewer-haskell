@@ -22,7 +22,7 @@ OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 -}
 
-module AsciiRender (Vec3,Color(..),Triangle(..),render,mag,norm,rotateX,rotateY,rotateZ) where
+module AsciiRender (Vec3,Color(..),Triangle(..),render,mag,norm) where
 
 import Data.Array.MArray
 import Data.Array.Unboxed
@@ -51,33 +51,6 @@ norm :: Vec3 -> Vec3
 norm (x,y,z) = let
     m = mag (x,y,z)
     in (x/m,y/m,z/m)
-
--- Rotate vector on X axis
-rotateX :: Float -> Vec3 -> Vec3
-rotateX θ (x,y,z) = let
-    cosθ = cos θ
-    sinθ = sin θ
-    y2 = y*cosθ - z*sinθ
-    z2 = y*sinθ + z*cosθ
-    in (x,y2,z2)
-
--- Rotate vector on Y axis
-rotateY :: Float -> Vec3 -> Vec3
-rotateY θ (x,y,z) = let
-    cosθ = cos θ
-    sinθ = sin θ
-    x2 = x*cosθ - z*sinθ
-    z2 = x*sinθ + z*cosθ
-    in (x2,y,z2)
-
--- Rotate vector on Z axis
-rotateZ :: Float -> Vec3 -> Vec3
-rotateZ θ (x,y,z) = let
-    cosθ = cos θ
-    sinθ = sin θ
-    x2 = x*cosθ - y*sinθ
-    y2 = x*sinθ + y*cosθ
-    in (x2,y2,z)
 
 -- Sort triangle Vec3s in x
 sortbyx :: Triangle -> Triangle
