@@ -69,9 +69,9 @@ getSystemNanosecs = do
 drawModel :: Float -> [Vec3] -> [(Int,Int,Int)] -> Float -> IO ()
 drawModel zoom vs fs t = do
     tstart <- getSystemNanosecs
-    let θ = t/5
+    let θ = t/10
     let (cosθ,sinθ) = (cos θ, sin θ)
-    let ϕ = -0.8+0.6*cos(t/15)
+    let ϕ = -0.8+0.6*cos(t/30)
     let (cosϕ,sinϕ) = (cos ϕ, sin ϕ)
     let trf  = Transform (cosθ,sinθ) (cosϕ,sinϕ) zoom
     let vs2  = map (applyTransform trf) vs
@@ -80,7 +80,7 @@ drawModel zoom vs fs t = do
     putStrLn (render 80 40 tris)
     tcurrent <- getSystemNanosecs
     let diffnanosecs = max 0 (tcurrent - tstart)
-    threadDelay (60000 - fromIntegral (diffnanosecs `div` 1000))
+    threadDelay (41666 - fromIntegral (diffnanosecs `div` 1000))
 
 main = do
     (fpath:_) <- getArgs
