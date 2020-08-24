@@ -65,7 +65,7 @@ cosineSim v@(x,y,z) u@(a,b,c) = (x*a + y*b + z*c) / (mag u * mag v)
 -- Ascii character from normal vector
 normalToChar :: Vec3 -> Char
 normalToChar v = let
-    ops = ".,-~:;=!*#$@"
+    ops = ".,-~:;!*=#$@"
     p = round (fI (length ops - 1) * (cosineSim (-1,1,0) v *0.5 + 0.5))
     in ops !! p
 

@@ -14,4 +14,4 @@ Watch the video:
 * Pirate ship: https://clara.io/view/604c9cec-3d90-493f-9fa9-fd7fc6dfec53
 * Hat: https://www.cadnav.com/3d-models/model-50631.html
 
-ASCII luminance idea by: [a1k0n.net](https://www.a1k0n.net/2011/07/20/donut-math.html)
+ASCII luminescence idea by: [a1k0n.net](https://www.a1k0n.net/2011/07/20/donut-math.html)
